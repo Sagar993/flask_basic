@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This collection belong to {{name}}</h1>
+    <table>
+        <tr>
+            <th>Movie Name</th>
+            <th>Lenght</th>
+            <th>Comment</th>
+            
+        </tr>
+        <tbody>
+            {% for movie,lenght in movies.items() %}
+            <tr>
+                
+                <td>{{movie}}</td>
+                <td>{{lenght}}</td>
+                {% if lenght<=1 %}
+
+                <td style="color:blue;">Short</td>
+                {% elif lenght>1 and lenght<3 %}
+                <td style="color:green;">Medium</td>
+                {% else %}
+                <td style="color:red;">Long</td>
+                 {% endif %}
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</body>
+</html>
